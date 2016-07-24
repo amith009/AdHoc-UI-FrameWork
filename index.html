@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title>..::Borg Program</title>
+	
+	 <!-- Bootstrap -->
+		<link href="component/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="component/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/default.css" rel="stylesheet">
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="component/html5shiv/html5shiv.min.js"></script>
+      <script src="component/respond/respond.min.js"></script>
+    <![endif]-->
+    
+    
+  </head>
+
+  <body ng-cloak class="main-page" ng-controller="mainPage">    
+     <ng-map zoom="5" center="india">
+      <custom-marker ng-repeat="cm in customMarkers" position="{{cm.address}}"
+        on-mouseover="mouseover()" on-mouseout="mouseout()"
+        on-click="click(event, cm.city, cm.stateName)">        
+        <div class="{{cm.class}}">              
+            <div class="weather-box" ng-class="cm.symbol"></div>
+            <span class="unit">{{cm.currentWeather}}&deg;C</span>
+            <div class="title"><b>{{cm.city}}</b></div>   
+        </div>
+      </custom-marker>
+    </ng-map>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="cityChart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">        
+          <div class="modal-body">          
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           
+            <div city="cityId" state="stateId" current-weather ng-if="loadChart"></div>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDgveMqosqcZwSfcdnrt8JXGYs6y4b7GgI"></script>
+    <script src="component/requirejs/require.js"></script>
+    
+    <script src="main.js"></script>
+  </body>
+  
+</html>

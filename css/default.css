@@ -1,0 +1,87 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+ng-map {
+    height: 100% !important;
+}
+.custom-marker {
+    font-size: 1.5em;
+    padding: 10px;
+    padding-right:30px;
+    background: #fff;
+    border-radius: 4px;
+    border: #7F7F7F solid 1px;
+}
+
+.custom-marker:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 7px 6px 0;
+    border-color: #fff transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-left: -6px;
+    bottom: -6px;
+    left: 50%;
+}
+
+.custom-marker:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 7px 6px 0;
+    border-color: #7F7F7F transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+    margin-left: -6px;
+    bottom: -7px;
+    left: 50%;
+}
+.title{
+    font-size:11px;
+    color:#121212;
+}
+.unit{
+font-size:25px;
+}
+.main-page .modal-body{
+    height:400px;
+}
+.main-page .modal-body button.close {    
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #333333;
+    padding: 3px 5px;
+    color: #000000;
+}
+.highcharts-title{
+    font-size:12px !important;
+}
+.highcharts-title tspan:first-child{
+    font-size:20px !important;
+}
+
+/*Weather Box*/
+.weather-box{
+    background:url('../img/meteogram-symbols-30px.png') 0px 0px no-repeat;
+    height:25px;
+    width:25px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.n{
+background-position: 0px 0px;
+}
+.d{
+background-position: 0px -30px;
+}
+
+
+
